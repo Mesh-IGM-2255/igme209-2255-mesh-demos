@@ -6,3 +6,5 @@ void _div();
 void printOneShort(const char label[], short num);
 
 void printTwoShorts(short a, short b);
+
+bool resolveCollision(short objectMask, short collisionLayer);
