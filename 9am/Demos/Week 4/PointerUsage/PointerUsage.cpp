@@ -55,6 +55,18 @@ int main()
 		cout << curr << ": " << *curr << endl;
 	}
 
+	char name[6] = "Shiro";
+	cout << name << endl;
+
+	char* currLet = name;
+	while (*currLet != '\0')
+	{
+		cout << *currLet;
+		currLet++;
+	}
+	cout << endl;
+
+
 	// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 	// NOT ALLOWED for HW1!!

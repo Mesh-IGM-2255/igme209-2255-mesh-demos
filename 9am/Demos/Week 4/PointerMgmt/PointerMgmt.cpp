@@ -10,6 +10,12 @@
 
 using namespace std;
 
+void useString();
+void arrPtrDemo();
+
+int* createArray(int arrSize);
+
+
 int main()
 {
 	int myInt = 40;
@@ -29,7 +35,12 @@ int main()
 
 	// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-	//int* memleak = new int(42);
+    //int* memleak = new int(42);
+
+	//string thing = "Hello World";
+	useString();
+
+	arrPtrDemo();
 
 	//_CrtDumpMemoryLeaks();
 
@@ -42,6 +53,34 @@ int main()
 		cout << "NO LEAKS DETECTED" << endl;
 	}
 
+	//int* memleak = new int(42);
 
+
+	//delete memleak;
+}
+
+void useString()
+{
+	string thing = "Hello World";
+	//string* thing = new string("Hello World");
+}
+
+void arrPtrDemo()
+{
+	int* heapArr = createArray(5);
+	int newArray[10]; // stack
+	for (int i = 0; i < 10; i++)
+	{
+		// have to copy element by element & adjust to make bigger/smaller
+	}
+	delete[] heapArr;
+}
+
+int* createArray(int arrSize)
+{
+//	const int arrSize = 5;
+	//int myArray[arrSize];
+	//int* myArray = new int[arrSize];
+	return new int[arrSize] {1, 2, 3};
 }
 
