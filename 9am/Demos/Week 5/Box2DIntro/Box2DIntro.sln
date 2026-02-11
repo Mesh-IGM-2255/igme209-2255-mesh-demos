@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.14.36310.24 d17.14
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Box2DIntro", "Box2DIntro.vcxproj", "{3FA7C387-8793-4F4C-9186-00042B497516}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x86 = Debug|x86
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{3FA7C387-8793-4F4C-9186-00042B497516}.Debug|x86.ActiveCfg = Debug|Win32
+		{3FA7C387-8793-4F4C-9186-00042B497516}.Debug|x86.Build.0 = Debug|Win32
+		{3FA7C387-8793-4F4C-9186-00042B497516}.Release|x86.ActiveCfg = Release|Win32
+		{3FA7C387-8793-4F4C-9186-00042B497516}.Release|x86.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {3829C256-ADE4-4BA0-9C4A-9BBB38E52716}
+	EndGlobalSection
+EndGlobal
