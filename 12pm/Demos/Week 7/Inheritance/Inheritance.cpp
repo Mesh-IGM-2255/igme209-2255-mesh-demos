@@ -10,6 +10,8 @@ using namespace std;
 #include <crtdbg.h>
 
 #include "Toy.h"
+#include "Pet.h"
+#include "Dog.h"
 #include <vector>
 
 void wrapper();
@@ -17,11 +19,7 @@ void vectorExample();
 
 int main()
 {
-    std::cout << "Hello World!\n";
-}
-
-int main()
-{
+	//vectorExample();
 	wrapper();
 
 	if (_CrtDumpMemoryLeaks())
@@ -41,10 +39,28 @@ void vectorExample()
 	for (short i = 0; i < myToys.size(); i++)
 	{
 		myToys[i]->Print(); // Can still access like an array
+	}
+
+	for (short i = 0; i < myToys.size(); i++)
+	{
 		delete myToys[i];
 	}
 }
 
 void wrapper()
 {
+	Dog pax("Pax");
+
+	pax.talk();
+	cout << endl;
+
+	Pet* myDog = &pax;
+	myDog->talk();
+	cout << endl;
+
+	myDog->talk();
+	cout << endl;
+
+	pax.talk();
+	cout << endl;
 }

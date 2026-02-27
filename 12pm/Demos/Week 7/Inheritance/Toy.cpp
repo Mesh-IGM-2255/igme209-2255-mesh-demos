@@ -18,5 +18,5 @@ Toy::Toy(string _name, float _price)
 
 void Toy::Print()
 {
-	cout << "Toy name: " << name << endl;
+	cout << name << ": " << price << endl;
 }
