@@ -11,13 +11,18 @@ using namespace std;
 
 #include "Character.h"
 #include "Cleric.h"
+#include "Sorcerer.h"
+#include "Multiclass.h"
 
-void wrapper();
+void objTests();
+
+void polymorphismTests();
 
 
 int main()
 {
-	wrapper();
+	//objTests();
+	polymorphismTests();
 
 	if (_CrtDumpMemoryLeaks())
 		cout << "\nMEMORY LEAKS!" << endl;
@@ -25,7 +30,41 @@ int main()
 		cout << "\nNo memory leaks. :)" << endl;
 }
 
-void wrapper()
+void polymorphismTests()
+{
+	cout << "~~ CREATE ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~" << endl;
+	vector<Character*> npcs;
+	npcs.push_back(new Character());
+	cout << endl;
+
+	npcs.push_back(new Cleric());
+	cout << endl;
+
+	npcs.push_back(new Sorcerer());
+	cout << endl;
+
+	npcs.push_back(new Multiclass());
+	cout << endl;
+
+	cout << "~~ PRINT ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~" << endl;
+	for (int i = 0; i < npcs.size(); ++i)
+	{
+		npcs[i]->PrintData();
+		npcs[i]->PrintType();
+		cout << endl;
+	}
+
+	cout << "~~ DELETE ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~" << endl;
+	for (int i = 0; i < npcs.size(); ++i)
+	{
+		delete npcs[i];
+		cout << endl;
+	}
+
+
+}
+
+void objTests()
 {
 	cout << "~~ CREATE ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~" << endl;
 	Character parentObj = Character("Lacy");

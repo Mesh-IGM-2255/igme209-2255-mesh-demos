@@ -11,7 +11,7 @@
 // https://learn.microsoft.com/en-us/cpp/cpp/override-specifier?view=msvc-170
 
 class Cleric :
-	public Character
+	virtual public Character
 {
 public:
 	Cleric();
