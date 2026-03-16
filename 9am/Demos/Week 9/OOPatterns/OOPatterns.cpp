@@ -18,7 +18,7 @@ void observerDemo();
 
 int main()
 {
-    //singletonDemo();
+    singletonDemo();
     observerDemo();
 
     if (_CrtDumpMemoryLeaks())

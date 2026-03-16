@@ -19,7 +19,7 @@ void observerDemo();
 int main()
 {
     singletonDemo();
-    //observerDemo();
+    observerDemo();
 
     if (_CrtDumpMemoryLeaks())
         cout << "\nPossible memory leaks" << endl;
