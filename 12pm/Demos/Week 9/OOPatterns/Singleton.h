@@ -10,5 +10,6 @@ private:
 	static Singleton instance; // **
 	unsigned short instanceGets;
 	Singleton(); // **
+	~Singleton();
 };
 

@@ -19,3 +19,8 @@ Singleton::Singleton()
 {
 	cout << "+Singleton()" << endl;
 }
+
+Singleton::~Singleton()
+{
+	cout << "~Singleton()" << endl;
+}
