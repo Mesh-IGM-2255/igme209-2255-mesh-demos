@@ -20,10 +20,20 @@ void ptrReview();
 Person* getPerson();
 void customSmartPtr();
 
+#include <memory>
+
+void uniquePtr();
+void sharedPtr();
+void gotchas();
+
+
 int main()
 {
 	//ptrReview();
-	customSmartPtr();
+	//customSmartPtr();
+	//uniquePtr();
+	// sharedPtr();
+	gotchas();
 
 	if (_CrtDumpMemoryLeaks())
 		std::cout << "\nMemory leaks?!" << std::endl;
@@ -64,5 +74,40 @@ void customSmartPtr()
 	SmartPointer<Person> ex1(new Person("Moxie"));
 	SmartPointer<int> ex2(new int(32));
 
-//	SmartPointer<Person> ex1Copy = ex1; // won't work yet!
+	//SmartPointer<Person> ex1Copy = ex1; // won't work yet!
+}
+
+void uniquePtr()
+{
+	std::unique_ptr<Person> originalOwner(new Person("Aiden"));
+	//originalOwner->printName();
+
+	// ONLY one owner allowed!
+	//std::unique_ptr<Person> extraOwner = originalOwner;
+
+	std::unique_ptr<Person> newOwner = std::move(originalOwner);
+}
+
+void sharedPtr()
+{
+	std::shared_ptr<Person> owner1(new Person("Cosmo"));
+
+	// extra owner via copy constructor
+	std::shared_ptr<Person> owner2(owner1);
+
+	// via assignment
+	std::shared_ptr<Person> owner3 = owner2;
+}
+
+void gotchas()
+{
+	Person* extraPerson = new Person("Samson");
+
+	std::unique_ptr<Person> uniquePerson(extraPerson);
+
+	// BAD
+	//std::unique_ptr<Person> otherOwner(extraPerson);
+
+	// ALSO BAD
+	//std::shared_ptr<Person> coOwner(extraPerson);
 }
