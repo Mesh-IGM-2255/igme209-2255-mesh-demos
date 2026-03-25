@@ -14,8 +14,12 @@ public:
 
 	~SmartPtr()
 	{
-		delete ptr;
-		ptr = nullptr;
+		//refCount--;
+		//if (refCount == 0)
+		//{
+			delete ptr;
+			ptr = nullptr;
+		//}
 	}
 
 	T& operator *()

@@ -18,10 +18,18 @@ void ptrReview();
 Person* createPerson(string name);
 void smartPerson();
 
+#include <memory>
+void uniquePtr();
+void sharedPtr();
+void gotchas();
+
 int main()
 {
 	//ptrReview();
-	smartPerson();
+	//smartPerson();
+	//uniquePtr();
+	//sharedPtr();
+	gotchas();
 
 	if (_CrtDumpMemoryLeaks())
 		std::cout << "\nMemory leaks?!" << std::endl;
@@ -44,12 +52,10 @@ void ptrReview()
 
 	//Person* tmp = createPerson("Pax");
 }
-
 Person* createPerson(string name)
 {
 	return new Person(name);
 }
-
 void smartPerson()
 {
 	SmartPersonPointer smartPerson(new Person("Cosmo"));
@@ -58,5 +64,33 @@ void smartPerson()
 	//SmartPersonPointer badSmartptr(new std::string());
 
 	SmartPtr<Person> ex1(new Person("Moxie"));
+	//SmartPtr<Person> copy = ex1; // BAD
 	SmartPtr<int> ex2(new int(12));
+}
+void uniquePtr()
+{
+	std::unique_ptr<Person> uniquePerson(new Person("Aiden"));
+
+	// NOT ALLOWED
+	// std::unique_ptr<Person> copyUPtr = uniquePerson;
+
+	std::unique_ptr<Person> newOwner = std::move(uniquePerson);
+}
+
+void sharedPtr()
+{
+	// Shared goverance
+	std::shared_ptr<Person> owner1(new Person("Aiden"));
+	std::shared_ptr<Person> owner2(owner1); // use copy constructor
+	std::shared_ptr<Person> owner3 = owner2; // using assignment to copy
+}
+
+void gotchas()
+{
+	Person* extraPerson = new Person("Extra");
+
+	// ONLY HAVE ONE OWNER!
+	std::unique_ptr<Person> uniqPerson(extraPerson);
+	std::shared_ptr<Person> sharedPerson(extraPerson);
+	std::shared_ptr<Person> sharedPerson2(extraPerson);
 }
