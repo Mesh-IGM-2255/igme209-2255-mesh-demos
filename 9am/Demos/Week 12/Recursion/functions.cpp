@@ -83,7 +83,6 @@ unsigned int fib_recursive(unsigned int num)
 
 unsigned int fib_recursive(unsigned int num, unsigned int& numCalls)
 {
-	numCalls++;
 	//std::cout << ".";
 
 	// base case
@@ -100,13 +99,13 @@ unsigned int fib_recursive(unsigned int num, unsigned int& numCalls)
 		// state change
 	else
 	{
+		numCalls++;
 		return fib_recursive(num - 1, numCalls) + fib_recursive(num - 2, numCalls);
 	}
 }
 
 unsigned int fibonacci_cached(unsigned int num, unsigned int* cache, unsigned int& count)
 {
-	count++;
 
 	// base case is I calculated this before
 	if (cache[num] != 0)
@@ -125,6 +124,7 @@ unsigned int fibonacci_cached(unsigned int num, unsigned int* cache, unsigned in
 	}
 	else
 	{
+		count++;
 		cache[num] = fibonacci_cached(num - 1, cache, count) + fibonacci_cached(num - 2, cache, count);
 	}
 
