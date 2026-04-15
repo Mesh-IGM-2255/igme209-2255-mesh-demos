@@ -19,4 +19,18 @@
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
+  <ItemGroup>
+    <Text Include="myData.txt">
+      <Filter>Resource Files</Filter>
+    </Text>
+    <Text Include="test.txt">
+      <Filter>Resource Files</Filter>
+    </Text>
+    <Text Include="saveData.txt">
+      <Filter>Resource Files</Filter>
+    </Text>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="level1.map" />
+  </ItemGroup>
 </Project>

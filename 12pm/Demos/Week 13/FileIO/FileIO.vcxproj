@@ -125,6 +125,14 @@
   <ItemGroup>
     <ClCompile Include="FileIO.cpp" />
   </ItemGroup>
+  <ItemGroup>
+    <Text Include="myData.txt" />
+    <Text Include="saveData.txt" />
+    <Text Include="test.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="level1.map" />
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>
